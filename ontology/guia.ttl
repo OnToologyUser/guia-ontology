@@ -12,13 +12,16 @@
 @base <http://w3id.org/def/guia#> .
 
 <http://w3id.org/def/guia#> rdf:type owl:Ontology ;
-                     dc:title "GUIA ontology"@en ;
-                     dct:creator "Andrea Cimmino Arriaga" ,
-                                 "Covadonga Arias" ;
-                     dct:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                     rdfs:comment "This ontology defines concepts to represent academic course guides in higher education. It models degrees, courses, teaching roles, learning design, resources, schedules, and evaluation systems, while reusing existing vocabularies such as Schema.org whenever possible."@en ;
-                     rdfs:label "GUIA Ontology"@en ;
-                     owl:versionInfo "0.1.0"@en .
+                             dc:title "GUIA ontology"@en ;
+                             dct:creator "Andrea Cimmino Arriaga" ,
+                                         "Covadonga Arias" ,
+                                         "Joaquín Gayoso Cabada" ,
+                                         "Juan Cano de Benito" ,
+                                         "Paola Espinoza Arias" ;
+                             dct:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+                             rdfs:comment "This ontology defines concepts to represent academic course guides in higher education. It models degrees, courses, teaching roles, learning design, resources, schedules, and evaluation systems, while reusing existing vocabularies such as Schema.org whenever possible."@en ;
+                             rdfs:label "GUIA Ontology"@en ;
+                             owl:versionInfo "0.1.0"@en .
 
 #################################################################
 #    Annotation properties
@@ -346,8 +349,8 @@ guide:periodEndingMonth rdf:type owl:DatatypeProperty ;
                         rdfs:label "period ending month"@en .
 
 
-###  http://w3id.org/def/guia#periodStaringtMonth
-guide:periodStaringtMonth rdf:type owl:DatatypeProperty ;
+###  http://w3id.org/def/guia#periodStartingMonth
+guide:periodStartingMonth rdf:type owl:DatatypeProperty ;
                           rdfs:domain guide:CourseGuide ;
                           rdfs:range rdf:langString ;
                           rdfs:comment "Indicates the month in which the teaching period starts."@en ;
@@ -509,14 +512,6 @@ sch:numberOfCredits rdf:type owl:DatatypeProperty ;
 #    Classes
 #################################################################
 
-###  http://www.ontology-of-units-of-measure.org/resource/om-2/Unit
-om:Unit rdf:type owl:Class .
-
-
-###  http://www.w3.org/2000/01/rdf-schema#Resource
-rdfs:Resource rdf:type owl:Class .
-
-
 ###  http://w3id.org/def/guia#Activity
 guide:Activity rdf:type owl:Class ;
                rdfs:comment "A teaching or learning activity carried out as part of the course, such as lectures, labs, seminars, tutorials, or independent work."@en ;
@@ -656,6 +651,14 @@ guide:UniversityCenter rdf:type owl:Class ;
                        rdfs:subClassOf sch:Organization ;
                        rdfs:description "An organizational unit within a university where degree programmes are taught, such as a faculty, school, or institute responsible for academic delivery."@en ;
                        rdfs:label "University Center"@en .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Unit
+om:Unit rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+rdfs:Resource rdf:type owl:Class .
 
 
 ###  https://schema.org/Course
